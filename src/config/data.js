@@ -29,18 +29,18 @@ const roles = [
 ]
 
 const users = {
-  name: 'Ahmed Ibrahim',
-  email: 'info@ahmedibra.com',
-  password: '123456',
+  name: 'Super Admin',
+  email: 'admin@admin.com',
+  password: '123123',
   confirmed: true,
   blocked: false,
 }
 
 const profile = {
-  phone: '+252615301507',
-  address: 'Mogadishu',
-  image: 'https://github.com/ahmaat19.png',
-  bio: 'Full Stack Developer',
+  phone: '+123456789',
+  address: 'Madrid',
+  image: '',
+  bio: 'Super Admin',
 }
 
 const clientPermissions = [
