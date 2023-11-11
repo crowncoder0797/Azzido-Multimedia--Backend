@@ -26,7 +26,7 @@ app.use('/', uploadRoute)
 app.use('/', authRoute)
 
 const __dirname = path.resolve()
-app.use('./api/uploads', express.static(path.join(__dirname, '/uploads')))
+app.use(`./${process.env.API_STR}uploads`, express.static(path.join(__dirname, '/uploads')))
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')))

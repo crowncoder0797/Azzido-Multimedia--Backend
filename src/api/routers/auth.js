@@ -43,71 +43,71 @@ import { seed } from '../controllers/auth/seed.js'
 const router = express.Router()
 
 // login
-router.route('/api/auth/login').post(login)
+router.route(`/${process.env.API_STR}auth/login`).post(login)
 
 // register
-router.route('/api/auth/register').post((register))
+router.route(`/${process.env.API_STR}auth/register`).post((register))
 
 // forgot password
-router.route('/api/auth/forgot-password').post(postForgotPassword)
+router.route(`/${process.env.API_STR}auth/forgot-password`).post(postForgotPassword)
 
 // reset password
-router.route('/api/auth/reset-password').post(postResetPassword)
+router.route(`/${process.env.API_STR}auth/reset-password`).post(postResetPassword)
 
 // // seed
-router.route('/api/auth/seed').get(seed)
+router.route(`/${process.env.API_STR}auth/seed`).get(seed)
 
 // user profiles
-router.route('/api/auth/user-profiles').get(isAuth, getUserProfiles)
+router.route(`/${process.env.API_STR}auth/user-profiles`).get(isAuth, getUserProfiles)
 
 // permissions
 router
-  .route('/api/auth/permissions')
+  .route(`/${process.env.API_STR}auth/permissions`)
   .get(isAuth, getPermissions)
   .post(isAuth, postPermission)
 router
-  .route('/api/auth/permissions/:id')
+  .route(`/${process.env.API_STR}auth/permissions/:id`)
   .put(isAuth, putPermission)
   .delete(isAuth, deletePermission)
 
 // roles
-router.route('/api/auth/roles').get(isAuth, getRoles).post(isAuth, postRole)
+router.route(`/${process.env.API_STR}auth/roles`).get(isAuth, getRoles).post(isAuth, postRole)
 router
-  .route('/api/auth/roles/:id')
+  .route(`/${process.env.API_STR}auth/roles/:id`)
   .put(isAuth, putRole)
   .delete(isAuth, deleteRole)
 
 // client permissions
 router
-  .route('/api/auth/client-permissions')
+  .route(`/${process.env.API_STR}auth/client-permissions`)
   .get(isAuth, getClientPermissions)
   .post(isAuth, postClientPermission)
 router
-  .route('/api/auth/client-permissions/:id')
+  .route(`/${process.env.API_STR}auth/client-permissions/:id`)
   .put(isAuth, putClientPermission)
   .delete(isAuth, deleteClientPermission)
 
 // profile
 router
-  .route('/api/auth/profile')
+  .route(`/${process.env.API_STR}auth/profile`)
   .get(isAuth, getProfile)
   .post(isAuth, postProfile)
 
 // user roles
 router
-  .route('/api/auth/user-roles')
+  .route(`/${process.env.API_STR}auth/user-roles`)
   .get(isAuth, getUserRoles)
   .post(isAuth, postUserRole)
 router
-  .route('/api/auth/user-roles/:id')
+  .route(`/${process.env.API_STR}auth/user-roles/:id`)
   .put(isAuth, putUserRole)
   .delete(isAuth, deleteUserRole)
   .post(postUserRoleById)
 
 // users
-router.route('/api/auth/users').get(isAuth, getUsers).post(isAuth, postUser)
+router.route(`/${process.env.API_STR}auth/users`).get(isAuth, getUsers).post(isAuth, postUser)
 router
-  .route('/api/auth/users/:id')
+  .route(`/${process.env.API_STR}auth/users/:id`)
   .put(isAuth, putUser)
   .delete(isAuth, deleteUser)
   .get(isAuth, getUserById)
