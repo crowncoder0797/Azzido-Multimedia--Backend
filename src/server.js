@@ -28,13 +28,21 @@ app.use('/', authRoute)
 const __dirname = path.resolve()
 app.use(`./${process.env.API_STR}uploads`, express.static(path.join(__dirname, '/uploads')))
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')))
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'))
-  )
-} else {
+//   app.get('*', (req, res) =>
+//     res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'))
+//   )
+// } else {
+//   app.get('/', (req, res) => {
+//     res.status(200).json({
+//       status: `Server running ${process.env.NODE_ENV} mode on post ${PORT}`,
+//     })
+//   })
+// }
+
+if (process.env.NODE_ENV !== 'production') {
   app.get('/', (req, res) => {
     res.status(200).json({
       status: `Server running ${process.env.NODE_ENV} mode on post ${PORT}`,
